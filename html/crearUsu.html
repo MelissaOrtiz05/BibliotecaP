@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar usuario</title>
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/87ac0bed6e.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body onload="cargarD()">
+  <img src="../img/1.jpg" class="rounded mx-auto d-block img-fluid img-rounded d-none d-sm-block" width="100%">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="alquilerLibros.html">Alquiler de libros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="comprarLibro.html">Compra de libros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contactenos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="noticias.html">Noticias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="proximoLibros.html" id="compraVenta">Compra y venta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="exportar.html" id="exporta">Exportar</a>
+          </li>
+          <li class="nav-item dropdown" id="subMenu">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Ingresa
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+              <li><a class="dropdown-item" href="crearUsu.html" id="crearUsu">Crear usuario</a></li>
+              <li><a class="dropdown-item" href="login.html" id="iniciar">Login</a></li>
+              <li><a class="dropdown-item" href="" onclick="cerrar()" id="cerrarSesion">Cerrar Sesión</a></li>
+            </ul>
+            <li class="nav-item">
+
+          </li>          <li class="nav-item"><a class="nav-link" href="" onclick="cerrar()" id="cerrarSesion">Cerrar Sesión</a></li>
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <br>
+
+    <h4 class="text-end" id="nombreU"></h4>
+    <br>
+    <br>
+    <h1 class="text-center text-info">Crea tu usuario!</h1><br><br>
+
+    <p class="parrafo">Está más cerca de nosotros y conoce nuestras novedades más recientes,por registrarte con nosotros
+      ten acceso a nuevas acciones. Nos comunicamos contigo cuando necesites ayuda para realizar procesos y te llamamos
+      para comentarte las nuevas promociones sobre el libro que tu eligas.
+      ​
+    </p>
+    <form>
+
+      <div class="row">
+        <div class="col-lg-3  col-md-3 col-sm-3 col-xl-3 col-0 ">
+        </div>
+
+        <div class="col-lg-6  col-md-6 col-sm-6 col-xl-6 col-12 ">
+          <center><iframe width="390" height="315" class="d-none d-sm-block" src="https://www.youtube.com/embed/jmjt3Sd8ZhE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <img src="../img/agregar-usuario.png"class="d-block d-sm-none
+          " srcset="">
+          </center><br>    <label>Cédula</label><br>
+          <input type="number" name="cedula" id="txtcedula" required class="form-control">
+          <br>
+          <label>Nombre</label><br>
+          <input type="text" name="nombre" id="txtnombre" class="form-control">
+          <br>
+          <label>Apellido</label><br>
+          <input type="text" id="txtpApellido" name="apellido" class="form-control">
+          <br>
+          <label>Correo</label><br>
+          <input type="text" id="txtCorreo" name="correo" class="form-control">
+          <br>
+          <label>Teléfono</label><br>
+          <input type="text" id="txtTelefono" name="telefono" class="form-control">
+          <br>
+          <label>Nombre Usuario</label><br>
+          <input type="text" id="txtNombreUsu" required name="nombreusuario" class="form-control">
+          <br>
+          <label>Dirección</label><br>
+          <input type="email" id="txtdireccion" name="direccion" class="form-control">
+          <br>
+
+
+
+
+          <label>Fecha de nacimiento</label><br>
+          <input type="date" id="dateFecha" name="fechaNac" class="form-control">
+          <br>
+          <label>País</label><br><input type="text" id="txtPais" onblur="capitalBusc()" class="form-control"
+            name="pais">
+
+          <br>
+          <label>Capital</label><br>
+          <input type="text" id="txtCapital" required name="capital" class="form-control">
+
+
+        </div>
+
+
+        <div class="col-lg-3  col-md-3 col-sm-3 col-xl-3 col-0 ">
+          <!--<img src="../img/agregar-usuario.png" alt="" class="img-fluid align-self-end">
+          -->
+        </div>
+
+        <br>
+        <input type="hidden" name="" id="idElim">
+        <div class="text-center">
+          <button type="button" class="btn btn-dark mt-3 me-3 pe-3" onclick="CrearUsuario()" id="crearUsuario"
+            name="guardar">Guardar <i class="far fa-save"></i></button>
+
+          <button type="button" class="btn btn-dark mt-3 me-3  pe-3" onclick="mostrarTabla()" id="mostrarUsuario"
+            name="mostrar"> Mostrar <i class="far fa-eye"></i></button>
+          <button type="button" class="btn btn-primary  mt-3 me-3 pe-3" onclick="editarUsu()" id="editarUsuario"
+            name="editar">Editar<i class="far fa-edit"></i></button>
+          <button type="button" class="btn btn-danger mt-3 me-3 pe-3" onclick="Elimino()" id="limpiar"
+            name="limpiar">Limpiar <i class="fas fa-trash"></i></button>
+          <!--  <input type="button" class="btn btn-dark  mt-3 me-3 pe-3" onclick="editarC()"  id="editar" name="editar" value="Editar">-->
+
+
+
+        </div>
+      </div>
+      <div class="divPru">
+
+      </div>
+
+    </form>
+    <br><br><br>
+
+    <br><br>
+    <input type="hidden" id="elimiarId">
+
+    <div id="datosT" style="display: none">
+      <div class="table-responsive">
+
+
+        <table class="table table-bordered  table-striped" id="mitabla">
+          <tr>
+
+            <th>Cédula</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Nombre Usuario</th>
+            <th>Dirección</th>
+            <th>Fecha de nacimiento</th>
+            <th>País</th>
+            <th>Capital</th>
+            <th colspan="2" class="text-center">Opcion</th>
+          </tr>
+          <tr>
+            <tbody id="elementos">
+
+            </tbody>
+          </tr>
+
+        </table>
+      </div>
+      <div id="divTabla"></div>
+
+    </div>
+    <br><br>
+    <br>
+
+  </div>
+  <br><br>
+  <br><br>
+
+  <footer class="bg-dark text-white  text-center">
+    <div class="row container">
+
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <br>
+        <b class="text-info">BIBLIOTECA NACIONAL</b><br><br>
+        <b>Telefonos</b><br><br>
+        <b class="d-none d-sm-block ">Nacional:</b> 3210456789 <br><br>
+        <p class="d-none d-sm-block "><b>Internacional:</b> +373210456789 <br></p>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <br>
+        <b>Dirección:</b> Calle 24 #5-60 <br><br>
+        <b>Horario de Atención:</b> Lunes/Sábados 8 am - 6 pm <br><br>
+        <p class="d-none d-sm-block "> <b>Código postal:</b> 110311<br><br></p>
+        <b class="d-none d-sm-block ">URL de Nuestro Sitio WEB:</b> <a class="d-none d-sm-block "
+          href="https://melissaortiz05.github.io/bibliotecaB/">Biblioteca
+          Nacional</a><br><br>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="../js/creaUsu.js"></script>
+  <script src="../js/js.js"></script>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <script src="../js2/bootstrap.min.js"></script>
+
+</body>
+
+</html>

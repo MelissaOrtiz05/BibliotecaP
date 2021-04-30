@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="  https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <script src="../js2/bootstrap.min.js"></script>
+    <script src="../js/js.js"></script>
+    <script src="../js/datatableReporte.js"></script>
+    <script src="https://kit.fontawesome.com/87ac0bed6e.js" crossorigin="anonymous"></script>
+</head>
+<body onload="cargarD()">
+    <img src="../img/1.jpg" class="rounded mx-auto d-block img-fluid img-rounded d-none d-sm-block" width="100%">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="alquilerLibros.html">Alquiler de libros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="comprarLibro.html">Compra de libros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contactenos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="noticias.html">Noticias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="proximoLibros.html" id="compraVenta">Compra y venta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="exportar.html" id="exporta">Exportar</a>
+                    </li>
+                    <li class="nav-item dropdown" id="subMenu">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Ingresa
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="crearUsu.html">Crear usuario</a></li>
+                            <li><a class="dropdown-item" href="login.html" id="iniciar">Login</a></li>
+                            <li><a class="dropdown-item" href="" onclick="cerrar()" id="cerrarSesion">Cerrar Sesión</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="" onclick="cerrar()" id="cerrarSesion">Cerrar Sesión</a></li>
+
+  
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <br>
+        <h4 class="text-end" id="nombreU"></h4>
+        <br>
+        <h1 class="text-center text-info d-none d-sm-block ">Generar reportes</h1><br>
+        <div class="row">
+            <div class="col-lg-4  col-md-4 col-sm-4 col-xl-4 col-xs-4">
+            </div>
+            <div class="col-lg-4  col-md-4 col-sm-4 col-xl-4 col-xs-4 d-none d-sm-block">
+                <img src="../img/pdfExcel.jpg" class="img-fluid">
+            </div>
+            <div class="col-lg-4  col-md-4 col-sm-4 col-xl-4 col-xs-4">
+            </div>
+        </div><br><br>
+        <h2 class="text-center text-info">Ventajas de generar reportes</h2><br><br>
+     
+        <div class="row">
+            <div class="col-lg-1  col-md-1 col-sm-1 col-xl-1 col-0">
+</div>
+            <div class="col-lg-4  col-md-4 col-sm-4 col-xl-4 col-12"><br>
+                <div class="card border-info mb-3" style="max-width: 28rem;">
+                    <div class="card-header text-center"> <i class=" m-2 fas fa-users fa-5x text-center"></i></div>
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Mayor comunicación
+                    </h5>
+                      <p class="card-text">Los problemas de comunicación son un mal para cualquier negocio. Es por esto que con los reportes se tendrá a la mano todos los comentarios del ususario
+
+                    </p>
+                    </div>
+                  </div>
+                  <br><br>
+                  <div class="card border-info mb-3" style="max-width: 28rem;">
+                    <div class="card-header text-center"> <i class=" m-2 fas fas fa-chart-area fa-5x text-center"></i></div>
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Incremento de la productividad
+                    </h5>
+                      <p class="card-text">Al tener un orden de los prosecos realizados, se lleva un buen control de estos y permite la correcta toma de desiciones en cualquier biblioteca sin importar cual sea.</p>
+                    </div>
+                  </div>
+
+        
+            </div>
+            <div class="col-lg-2  col-md-2 col-sm-2 col-xl-2 col-0"><br>
+</div>
+            <div class="col-lg-4  col-md-4 col-sm-4 col-xl-4 col-12 d-none d-sm-block"><br>
+
+                <div class="card border-info mb-3" style="max-width: 28rem;">
+                    <div class="card-header text-center">  <i class=" m-2  fas fa-fist-raised fa-5x"></i></div>
+                    <div class="card-body">
+                      <h5 class="card-title text-center"> Mayor competitividad
+                    </h5>
+                      <p class="card-text">Cuando realizar reportes y análisis de la información recolectada se adquiere la capacidad de responder a las necesidades de un
+                        proceso cada vez más global.</p>
+                    </div>
+                  </div>
+<br><br>
+                  <div class="card border-info mb-3" style="max-width: 28rem;">
+                    <div class="card-header text-center">  <i class=" m-2  fas fa-dollar-sign fa-5x"></i></div>
+                    <div class="card-body">
+                      <h5 class="card-title text-center"> Precisión en el área de finanzas
+                    </h5>
+                      <p class="card-text">Administrar correctamente la información y contar con reportes y análisis al día te permite organizar con mayor exactitud el presupuesto y recursos financieros y así empezar a crecer.</p>
+                    </div>
+                  </div>
+
+            </div>
+            <div class="col-lg-1  col-md-1 col-sm-1 col-xl-1 col-0">
+            </div>
+        </div>
+        
+        <hr>
+        <br><br>
+        <div class="me-5">
+            <div class="row">
+
+                <div class="col-lg-7  col-md-7 col-sm-7 col-xl-7 col-12 ">
+
+        <h3 class="text-info "> Selecciona que información deseas exportar</h3> <br>
+        <ul class="d-none d-sm-block">
+            <li >
+                PDF
+            </li>
+            <li>
+                Excel
+            </li>
+            <li>
+                Print
+            </li>
+        </ul>
+        ​
+        </p>
+
+        <form>
+
+
+                        <label>Selecciona la tabla a exportar</label><br>
+                        <select id="opcion" onchange="opciones()" name="opcion" class="form-control">
+                            <option id="seleccionV" value="seleccionV">Elige la opción a exportar</option>
+                            <option id="Contactenos" value="Contactenos">Comentarios de contactenos</option>
+                            <option id="Alquiler_libros" value="Alquiler de libros">Información sobre libros alquilados</option>
+                            <option id="Usuarios_nuevos" value="Usuarios Nuevos">Usuarios Nuevos</option>
+                            <option id="Compra_libros" value="Compra de libros">Compra de libro</option>
+                            <option id="CompraVenta_libros" value="Compra y venta de libros">Compra y venta de libros</option>
+
+                        </select>
+
+                        <!-- <i class="fab fa-mdb"></i>-->
+                        <br><br><br>
+                 
+                    </div>
+                    <div class="col-lg-1  col-md-1 col-sm-1 col-xl-1 col-xs-1">
+</div>  
+
+                    <div class="col-lg-4  col-md-4 col-sm-4 col-xl-4 col-xs-4 d-none d-sm-block">
+                        <iframe class="rounded mx-auto d-block w-100 img-fluid" style="height: 280px;" src="https://www.youtube.com/embed/sv6yaVunVms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        
+                     </div>
+                </div><br><br>
+                <div id="datosT" style="display: none">
+                    <div class="table-responsive">
+                        <table class="table table-bordered border-light" id="mitabla">
+                            <thead class="table-primary">
+
+                                <tr>
+
+                                    <th>Cédula</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>2º Apellido</th>
+                                    <th>Correo</th>
+                                    <th>Fecha de nacimiento</th>
+                                    <th>Edad</th>
+
+                                    <th>Teléfono</th>
+                                    <th>Tipo de libro</th>
+                                    <th>Motivo de contacto</th>
+                                    <th>Género</th>
+                                </tr>
+                            </thead>
+                            <tbody id="elementos">
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <div id="divTabla"></div>
+
+                </div>
+    
+                <div id="datosAlq2" style="display: none">
+                    <h4 class="text-center text-info">Cantidad de los libros alquilados</h4><br><br>
+
+                    <div class="table-responsive">
+
+
+                        <table class="table table-striped  table-striped" id="mitablaAlq2">
+                            <thead class="table-primary">
+                                <tr>
+
+                                    <th> Id</th>
+
+                                    <th class="">subT 1</th>
+                                    <th class="">subT 2</th>
+                                    <th class="">subT 3</th>
+                                    <th class="">subT 4</th>
+                                    <th class="">subT 5</th>
+                                    <th class="">subT 6</th>
+                                    <th class="">subT 7</th>
+                                    <th class="">subT 8</th>
+                                    <th class="">subT 9</th>
+                                    <th class="">subT 11</th>
+                                    <th class="">subT 11</th>
+                                    <th class="">subT 12</th>
+                                    <th class="">Total</th>
+                                </tr>
+
+                            </thead>
+                            <tbody id="elementosAlq2">
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <div id="divTablaAlq2"></div>
+
+                </div>
+                <div id="datosTUsu" style="display: none">
+                    <div class="table-responsive">
+
+                        <table class="table table-bordered border-light" id="mitablaUsu">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Cédula</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Correo</th>
+                                    <th>Teléfono</th>
+                                    <th>Nombre Usuario</th>
+                                    <th>Dirección</th>
+                                    <th>Fecha de nacimiento</th>
+                                    <th>País</th>
+                                    <th>Capital</th>
+                                </tr>
+                            </thead>
+                            <tbody id="elementosUsu">
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div id="divTablaUsu"></div>
+
+                </div>
+
+                <div id="datosTComp" style="display: none">
+                    <div class="table-responsive">
+                        <table class="table table-bordered border-light" id="mitablaComp">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Clave</th>
+
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Cédula</th>
+                                    <th>Fecha de nacimiento</th>
+                                    <th>Correo</th>
+                                    <th>Celular</th>
+                                    <th>Nombre del Libro</th>
+                                    <th>Categoria del Libro</th>
+                                    <th>Ciudad</th>
+                                    <th>Barrio</th>
+                                    <th>Dirección</th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody id="elementosComp"></tbody>
+                        </table>
+
+                    </div>
+                    <div id="divTablaComp"></div>
+                </div>
+
+                <div id="datosEmpresaCVen" style="display: none">
+                    <div class="table-responsive">                
+                      <table class="table table-bordered border-light" id="tablaCVen">
+                        <thead class="table-primary">
+                        <tr>
+                          <th>Código del libro</th>
+                          <th>Nombre</th>
+                          <th>Cantidad de meses</th>
+                          <th>Tipo de libro</th>
+                          <th>Correo</th>
+                          <th>Editorial</th>
+                          <th>Precio del Libro</th>
+                          <th>Autor del libro</th>
+                          <th>Año de la publicación</th>
+                          <th>Número de páginas</th>
+                        </tr>
+                        </thead>
+                          <tbody id="elementosCVen">
+                  
+                          </tbody>
+                        
+                      </table>
+                    </div>
+                    <div id="divTablaCVen"></div>
+                  
+                  </div>
+           
+    </div>
+        </form>
+        <br><br><br>
+
+        <br><br>
+     
+        <br><br>
+        <br>
+
+
+    </div>
+    
+    <br><br>
+</body>
+    <footer class="bg-dark text-white  text-center">
+        <div class="row container">
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <br>
+                <b class="text-info">BIBLIOTECA NACIONAL</b><br><br>
+                <b>Telefonos</b><br><br>
+                <b class="d-none d-sm-block ">Nacional:</b> 3210456789 <br><br>
+                <p class="d-none d-sm-block "><b>Internacional:</b> +373210456789 <br></p>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <br>
+                <b>Dirección:</b> Calle 24 #5-60 <br><br>
+                <b>Horario de Atención:</b> Lunes/Sábados 8 am - 6 pm <br><br>
+                <p class="d-none d-sm-block "> <b>Código postal:</b> 110311<br><br></p>
+                <b class="d-none d-sm-block ">URL de Nuestro Sitio WEB:</b> <a class="d-none d-sm-block "
+                    href="https://melissaortiz05.github.io/bibliotecaB/">Biblioteca
+                    Nacional</a><br><br>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.1/js/buttons.print.min.js"></script>
+
+<script>
+    /*$(document).ready(function() {
+        $("#mitabla").DataTable({
+    
+        stateSave: true,
+        responsive: "true",
+        dom: 'Bfrtip',
+        buttons: [ {
+        extend: 'excelHtml5',
+        text: '<button class="btn btn-success"><i class="fas fa-file-excel"></i></button>',
+        titleAttr: 'Exportar a excel',
+        className: 'btn btn-success'
+        }, {
+        extend: 'pdfHtml5',
+        text: '<button class="btn btn-danger"><i class="fas fa-file-pdf"></i></button>',
+        titleAttr: 'Exportar a pdf',
+        className: 'btn btn-danger'
+        }, {
+        extend: 'print',
+        text: '<button class="btn btn-info"><i class="fas fa-print"></i></button>',
+        titleAttr: 'Exportar a pdf',
+        className: 'btn btn-danger'
+        }
+
+        ]
+    });
+    });
+*/
+</script>
+</html>
