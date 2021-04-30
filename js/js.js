@@ -52,11 +52,11 @@ function iniciarSesion() {
       })
   }
 }
+
 var usua
 miStorage = window.localStorage;
 
 function cargarD() {
-  
   usua = miStorage.getItem('Inicio')
   document.getElementById('nombreU').innerHTML = usua;
   var login = document.getElementById('iniciar');
@@ -73,6 +73,7 @@ function cargarD() {
   } else {
     login.style.display = '';
     cerrarS.style.display = 'none';
+    crearUsu.style.display = '';
 
   }
 
